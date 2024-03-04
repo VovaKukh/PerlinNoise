@@ -12,8 +12,8 @@ public class RandomNoiseArrowMap extends Application {
 
     @Override
     public void start(Stage stage) {
-        final int width = 512;
-        final int height = 512;
+        final int width = 720;
+        final int height = 720;
         Canvas canvas = new Canvas(width, height);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
@@ -27,9 +27,9 @@ public class RandomNoiseArrowMap extends Application {
     }
 
     private void drawCircles(GraphicsContext gc, int width, int height) {
-        int circleRadius = 3;
-        int spacing = 40;
-        int arrowLength = 20;
+        int circleRadius = 2;
+        int spacing = 20;
+        int arrowLength = 13;
 
         gc.setFill(Color.BLACK);
 
@@ -59,7 +59,7 @@ public class RandomNoiseArrowMap extends Application {
 
         // Draw the line for the arrow
         gc.setStroke(Color.RED); // Set arrow color
-        gc.setLineWidth(2); // Set arrow thickness
+        gc.setLineWidth(1); // Set arrow thickness
         gc.strokeLine(startX, startY, endX, endY);
 
         // Optionally, draw an arrowhead at the end
@@ -68,7 +68,7 @@ public class RandomNoiseArrowMap extends Application {
 
     private void drawArrowHead(GraphicsContext gc, int startX, int startY, int endX, int endY) {
         double phi = Math.toRadians(40);
-        int arrowHeadLength = 5;
+        int arrowHeadLength = 4;
 
         double angle = Math.atan2(endY - startY, endX - startX);
 
