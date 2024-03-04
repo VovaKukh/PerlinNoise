@@ -36,7 +36,7 @@ public class PerlinNoiseArrowMapFF extends Application {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         // Create dots based on Perlin noise
-        Dot[][] dots = createDots(gc, width, height, 0.2);
+        Dot[][] dots = createDots(width, height, 0.2);
 
         // Average the directions of each dot with its neighbors
         //medianDirections(dots);
@@ -120,8 +120,7 @@ public class PerlinNoiseArrowMapFF extends Application {
             lines.add(new Line(currentDot.getX(), currentDot.getY(), endX, endY));
 
             // Set the angle for the new dot based on the closest grid dot
-            Dot newDot = new Dot(endX, endY, findClosestDot(dots, new Dot(endX, endY, 0)).getAverageAngle());
-            currentDot = newDot; // Prepare for the next iteration
+            currentDot = new Dot(endX, endY, findClosestDot(dots, new Dot(endX, endY, 0)).getAverageAngle());
         }
     }
 
@@ -155,10 +154,10 @@ public class PerlinNoiseArrowMapFF extends Application {
         // Check immediate neighbors to ensure we find the closest dot
         int[] dx = {-1, 0, 1};
         int[] dy = {-1, 0, 1};
-        for (int i = 0; i < dx.length; i++) {
-            for (int j = 0; j < dy.length; j++) {
-                int neighborX = gridX + dx[i];
-                int neighborY = gridY + dy[j];
+        for (int j : dx) {
+            for (int k : dy) {
+                int neighborX = gridX + j;
+                int neighborY = gridY + k;
 
                 // Check bounds
                 if (neighborX >= 0 && neighborX < dots.length && neighborY >= 0 && neighborY < dots[0].length) {
@@ -179,7 +178,7 @@ public class PerlinNoiseArrowMapFF extends Application {
         return Math.sqrt(Math.pow(dot1.getX() - dot2.getX(), 2) + Math.pow(dot1.getY() - dot2.getY(), 2));
     }
 
-    private Dot[][] createDots(GraphicsContext gc, int width, int height, double z) {
+    private Dot[][] createDots(int width, int height, double z) {
         int numCirclesX = width / dotSpacing;
         int numCirclesY = height / dotSpacing;
         Dot[][] dots = new Dot[numCirclesX][numCirclesY];
