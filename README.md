@@ -16,5 +16,11 @@
 <img src="docs/RandomNoiseGraph.jpg" width="400" height="400" alt="Random Noise Graph"/>
 </p>
 
+<h3>Tree-like branch structure using perlin noise</h3>
+<p>
+<img src="docs/PerlinNoiseTreeMap_step2.jpg" width="400" height="400" alt="Tree map Step 2"/>
+<img src="docs/PerlinNoiseTreeMap_step1.jpg" width="400" height="400" alt="Tree map Step 1"/>
+</p>
+
 <h3>Perlin noise animation gif</h3>
 <img src="docs/output5_60f_quantized.gif" width="400" height="400" alt="Perlin Noise Demo"/>
