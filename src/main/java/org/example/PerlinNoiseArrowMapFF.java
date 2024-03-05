@@ -39,8 +39,8 @@ public class PerlinNoiseArrowMapFF extends Application {
         Dot[][] dots = createDots(width, height, 0.2);
 
         // Average the directions of each dot with its neighbors
-        //medianDirections(dots);
         //averageDirections(dots);
+        //medianDirections(dots);
         //randomNeighborDirection(dots);
         //randomNeighborDirectionWithVariation(dots);
         randomAverageNeighborDirection(dots);
@@ -217,7 +217,6 @@ public class PerlinNoiseArrowMapFF extends Application {
         int[] dy = {-1, -1, -1, 0, 0, 1, 1, 1};
 
         for (int x = 0; x < dots.length; x++) {
-            //System.out.println(x);
             for (int y = 0; y < dots[0].length; y++) {
                 double sumAngle = 0;
                 int count = 0;
@@ -236,7 +235,6 @@ public class PerlinNoiseArrowMapFF extends Application {
                 if (count > 0) {
                     double avgAngle = sumAngle / count;
                     dots[x][y].setAverageAngle(avgAngle);
-                    //System.out.println("  - Angle " + y + ": " + avgAngle);
                 }
             }
         }

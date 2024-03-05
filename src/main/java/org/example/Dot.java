@@ -22,6 +22,14 @@ public class Dot {
         return y;
     }
 
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
     public double getAngle() {
         return angle;
     }
@@ -44,5 +52,9 @@ public class Dot {
 
     public void setAverageAngle(double averageAngle) {
         this.averageAngle = averageAngle;
+    }
+
+    public double distanceTo(Dot other) {
+        return Math.sqrt(Math.pow(this.x - other.x, 2) + Math.pow(this.y - other.y, 2));
     }
 }
