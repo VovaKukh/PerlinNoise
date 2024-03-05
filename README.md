@@ -22,5 +22,11 @@
 <img src="docs/PerlinNoiseTreeMap_step1.jpg" width="400" height="400" alt="Tree map Step 1"/>
 </p>
 
+<h3>3D terrain generation using perlin noise</h3>
+<p>
+<img src="docs/PerlinNoise3D.jpg" width="400" height="400" alt="Perlin noise 3D Step 2"/>
+<img src="docs/PerlinNoise3D_wireframe.jpg" width="400" height="400" alt="Perlin noise 3D Step 1"/>
+</p>
+
 <h3>Perlin noise animation gif</h3>
 <img src="docs/output5_60f_quantized.gif" width="400" height="400" alt="Perlin Noise Demo"/>
